@@ -4,26 +4,28 @@
 #include<vector>
 using namespace std;
 
-______________ randomVector(unsigned int N){	
+vector<int> randomVector(int N){	
     vector<int> v;
-    for(unsigned int i = 0; i < N; i++) v.______________(rand()%10);
-    ______________;
+    for(int i = 0; i < N; i++) v.push_back(rand()%10);
+    return v;
 }
 
-______________ showVector(______________){
+
+void showVector(vector<int> a){
 	cout << "[";
-	for(unsigned int i = 0; _____________________; i++){
-		cout << _________________;
-		if(_________________) cout << "]";
+	for(unsigned int i = 0;i < a.size(); i++){
+		cout << a.at(i);
+		if(i == a.size()-1) cout << "]";
 		else cout << " ";
 	}
 }
 
-_________________ dotProduct(_____________________________){
+int dotProduct(vector<int> a,vector<int> b){
 	int sum = 0;
-	for(unsigned int i = 0; _____________________; i++) sum += _________________;	
-	_________________;
+	for(unsigned int i = 0;i < a.size(); i++) sum += a.at(i)*b.at(i);	
+	return sum;
 }
+
 
 int main(){
 	srand(time(0));
